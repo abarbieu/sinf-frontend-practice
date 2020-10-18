@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
    return (
-      <header className='dark-bg-1 p-3 w-100'>
+      <header className='p-3 w-100' style={{backgroundColor: "#3a4152"}}>
       <h1 className='accent-color'>Notes</h1>
     </header>
    )

@@ -554,6 +554,20 @@ div.no-margin {
   top: 50vh;
   background-color: var(--brand);
 }
+
+.formStyle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 96%;
+  margin: 20px 2% 20px 2%;
+  padding: 20px 0 20px 0;
+  background-color: #3a4152;
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+}
+
 @keyframes shrinkFade {
   0% {
     visibility: visible;

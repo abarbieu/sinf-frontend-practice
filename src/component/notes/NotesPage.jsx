@@ -28,17 +28,16 @@ export default function NotesPage() {
    };
 
    return (
-      <div>
-         <button onClick={getNotes}>Press Me</button>
+      <div style={{width: "96%", display: "flex", justifyContent: "center", margin: "0 2% 2% 2%"}}>
+         <button onClick={getNotes} className="btn btn-outline-dark" style={{width: "120px", marginRight: "10px"}}>Load Notes</button>
          {notes.map((note) => {
             return (
                <div key={note.id}>
-                  <h1>{note.title}</h1>
-                  <p className='dark-color'>{note.content}</p>
+                  <h1 style={{fontSize: "16px", fontWeight: "300"}}>{note.title}</h1>
+                  <p style={{fontSize: "16px", fontWeight: "300"}}>{note.content}</p>
                </div>
             );
          })}
-         <button onClick={createNote}>Add Note</button>
       </div>
    );
 }
