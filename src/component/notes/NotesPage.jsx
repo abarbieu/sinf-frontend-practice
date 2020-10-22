@@ -28,7 +28,7 @@ export default function NotesPage() {
    };
 
    return (
-      <div style={{width: "96%", display: "flex", justifyContent: "center", margin: "0 2% 2% 2%"}}>
+      <div style={{width: "96%", display: "flex", flexDirection: 'column', justifyContent: "center", margin: "0 auto 2% auto"}}>
          <button onClick={getNotes} className="btn btn-outline-dark" style={{width: "120px", marginRight: "10px"}}>Load Notes</button>
          {notes.map((note) => {
             return (

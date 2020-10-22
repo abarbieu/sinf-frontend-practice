@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import axios from 'axios';
 
 class FormPage extends Component {
     constructor() {
         super();
-        this.state = {id: '', title: '', content: '', date: '', archived: false};
+        this.state = {title: '', content: '', archived: false};
     
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleContentChange = this.handleContentChange.bind(this);
@@ -14,17 +13,10 @@ class FormPage extends Component {
       }
 
 
-    // {
-    //     id: 1,
-    //     title: "hello, first note",
-    //     content: "here is the content",
-    //     date: moment().format("yyyy/MM/dd/hh:mm:hh"),
-    //     archived: false,
-    // }
     handleSubmit(){
-        this.setState({id: '0'});
-        console.table(this.state);
-        axios.post(this.apiUrl, JSON.stringify(this.state));
+        console.log(this.state.title);
+        console.log(this.state.content);
+        axios.post(this.apiUrl, this.state);
     }
 
     handleTitleChange(e) {
