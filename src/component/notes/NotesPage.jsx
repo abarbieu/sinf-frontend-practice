@@ -6,7 +6,6 @@ export default function NotesPage() {
 
    const apiUrl = "http://localhost:54321/notes/";
 
-   //! return array of notes from backend
    const getNotes = () => {
       axios
          .get(apiUrl)
@@ -21,20 +20,35 @@ export default function NotesPage() {
          .then(() => {
             console.log("finished");
          });
-   };
+   }
 
-   const createNote = () => {
-      axios.post(apiUrl, JSON.stringify({ title: "title" }));
-   };
+   //! return array of notes from backend
+   const checkNotes = () => {
+      // if(document.getElementById('loadNotes').innerText === 'Load Notes'){
+      //       document.getElementById('loadNotes').innerText = 'Hide Notes'
+            getNotes()
+            // document.getElementById('notes').setAttribute('display: initial;')
+      // }else{
+      //    document.getElementById('loadNotes').innerText = 'Load Notes'
+      //    document.getElementById('notes').setAttribute('display: none;')
+      // }
+   }
+
+   
+   
+
+   // const createNote = () => {
+   //    axios.post(apiUrl, JSON.stringify({ title: "title" }));
+   // };
 
    return (
       <div style={{width: "96%", display: "flex", flexDirection: 'column', justifyContent: "center", margin: "0 auto 2% auto"}}>
-         <button onClick={getNotes} className="btn btn-outline-dark" style={{width: "120px", marginRight: "10px"}}>Load Notes</button>
+         <button id='loadNotes' onClick={checkNotes} className="btn btn-outline-dark" style={{width: "120px", marginRight: "10px", marginBottom: '20px'}}>Load Notes</button>
          {notes.map((note) => {
             return (
-               <div key={note.id}>
-                  <h1 style={{fontSize: "16px", fontWeight: "300"}}>{note.title}</h1>
-                  <p style={{fontSize: "16px", fontWeight: "300"}}>{note.content}</p>
+               <div id='notes' key={note.id} style={{padding: '10px', marginBottom: '10px', backgroundColor: '#3a4152', border: '1px solid #1e1e1e'}}>
+                  <p style={{fontSize: "24px", fontWeight: "350"}}>{note.title}</p>
+                  <p style={{fontSize: "16px", fontWeight: "250"}}>{note.content}</p>
                </div>
             );
          })}

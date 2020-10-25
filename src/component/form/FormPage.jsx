@@ -16,7 +16,7 @@ class FormPage extends Component {
     handleSubmit(){
         console.log(this.state.title);
         console.log(this.state.content);
-        axios.post(this.apiUrl, this.state);
+        axios.post(this.apiUrl, this.state)
     }
 
     handleTitleChange(e) {
